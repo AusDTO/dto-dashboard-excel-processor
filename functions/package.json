@@ -1,0 +1,38 @@
+{
+  "name": "dto-dashboard-serverless",
+  "version": "0.0.1",
+  "description": "A Serverless Project and its Serverless Plugin dependencies.",
+  "author": "me",
+  "license": "MIT",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/"
+  },
+  "dependencies": {
+    "lodash": "^4.12.0",
+    "request-promise": "^3.0.0",
+    "xlsx": "^0.8.0"
+  },
+  "devDependencies": {
+    "ava": "^0.14.0",
+    "babel-core": "^6.8.0",
+    "babel-preset-es2015": "^6.6.0",
+    "sinon": "^1.17.4"
+  },
+  "scripts": {
+    "start": "sls offline start",
+    "test": "ava"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
+  },
+  "xo": {
+    "ignores": [
+      "*.test.js"
+    ],
+    "space": 2
+  }
+}

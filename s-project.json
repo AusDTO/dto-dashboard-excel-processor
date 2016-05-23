@@ -1,0 +1,8 @@
+{
+  "name": "dto-dashboard-serverless",
+  "custom": {},
+  "plugins": [
+    "serverless-offline",
+    "serverless-runtime-babel"
+  ]
+}
