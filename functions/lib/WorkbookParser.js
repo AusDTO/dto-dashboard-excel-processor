@@ -15,24 +15,21 @@ class WorkbookParser {
   }
 
   parse() {
-    const data = [];
+    const data = {};
 
     _.each(this.workbook.SheetNames, (name) => {
       const worksheet = this.sheet_to_json(name);
-
-      let widget = {};
 
       _.each(worksheet, (row) => {
         let label = row.Month;
         _.forIn(row, (v, k) => {
           if(k != 'Month') {
-            (widget[k] = widget[k] || []).push({ label: label, value: v });
+            (data[k] = data[k] || []).push({ label: label, value: v });
           }
         });
       });
-      data.push(widget)
     });
-    return _.first(_.flatten(data));
+    return data;
   }
 
   static workbook(buffer) {

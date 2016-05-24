@@ -31,7 +31,10 @@ const data =  [ { Month: '2013-05',
     'Total accounts': '5',
     'New accounts': '15',
     'Sign ins': '25',
-    'Sign ins per account': '35' } ];
+    'Sign ins per account': '35' },
+    { Month: '2013-09',
+      'BLAH': '5',
+      'VTHA': '15'} ];
 
 const workbook = {
   SheetNames: ['a']
@@ -50,6 +53,7 @@ test('maps excel data structure to dashboard format', t => {
   const keys = _.keys(result)
 
   t.true(_.includes(keys, 'Total accounts'));
+  t.true(_.includes(keys, 'BLAH'));
 
   parser.sheet_to_json = f;
 });

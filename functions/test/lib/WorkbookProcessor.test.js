@@ -21,6 +21,7 @@ test.serial('processes excel binary to json', async t => {
 
   const keys = _.keys(data)
   t.true(_.includes(keys, 'Total accounts'));
+  t.true(_.includes(keys, 'BLAH'));
 
   request.get.restore();
 });

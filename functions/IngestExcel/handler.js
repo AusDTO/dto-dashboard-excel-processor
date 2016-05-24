@@ -12,6 +12,7 @@ module.exports.default = (event, context, callback) => {
 
   workbook.process()
     .then( (data) => {
+      console.log({ url: s3Event.url, data: data });
       callback(null, { url: s3Event.url, data: data });
     })
     .catch( (err) => {
