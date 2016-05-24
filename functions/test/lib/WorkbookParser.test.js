@@ -4,7 +4,7 @@ import xlsx from 'xlsx';
 
 import _ from 'lodash';
 
-import { WorkbookParser } from '../../lib/WorkbookParser';
+import WorkbookParser from '../../lib/WorkbookParser';
 
 
 const data =  [ { Month: '2013-05',
@@ -37,7 +37,7 @@ const workbook = {
   SheetNames: ['a']
 }
 
-test('maps excel to correct format', t => {
+test('maps excel data structure to dashboard format', t => {
 
   const parser = new WorkbookParser(workbook);
   const f = parser.sheet_to_json;

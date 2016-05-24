@@ -1,6 +1,8 @@
-import xlsx from 'xlsx';
+'use strict';
 
-import _ from 'lodash';
+var xlsx = require('xlsx');
+
+var _ = require('lodash');
 
 class WorkbookParser {
 
@@ -39,4 +41,4 @@ class WorkbookParser {
 }
 
 
-export { WorkbookParser }
+module.exports = WorkbookParser

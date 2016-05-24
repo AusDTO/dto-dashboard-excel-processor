@@ -1,15 +1,16 @@
 {
   "name": "ingest_excel",
-  "runtime": "babel",
+  "runtime": "nodejs4.3",
   "description": "Serverless Lambda function for project: dto-dashboard-serverless",
   "customName": false,
   "customRole": false,
-  "handler": "handler.default",
-  "timeout": 6,
+  "handler": "functions/IngestExcel/handler.default",
+  "timeout": 3,
   "memorySize": 128,
   "authorizer": {},
   "custom": {
-    "excludePatterns": []
+    "excludePatterns": [],
+    "optimize": true
   },
   "endpoints": [],
   "events": [

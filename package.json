@@ -9,20 +9,13 @@
     "type": "git",
     "url": "git://github.com/"
   },
-  "dependencies": {
-    "request-promise": "^3.0.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "serverless-offline": "^2.4.0",
-    "serverless-runtime-babel": "serverless/serverless-runtime-babel#1cb95ee"
+    "serverless-autoprune-plugin": "^0.2.0",
+    "serverless-offline": "^2.4.0"
   },
   "scripts": {
     "start": "sls offline start",
     "test": "ava"
-  },
-  "ava": {
-    "require": [
-      "babel-register"
-    ]
   }
 }

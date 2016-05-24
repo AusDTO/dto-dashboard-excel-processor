@@ -1,7 +1,7 @@
 'use strict';
 
-// import request from 'request-promise';
+var S3Event = require('../lib/S3Event');
 
-export default (event, context, callback) => {
-  callback(null, 'helo');
+module.exports.default = (event, context, callback) => {
+  callback(null, 'helo!');
 };

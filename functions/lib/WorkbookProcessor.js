@@ -1,8 +1,8 @@
-import xlsx from 'xlsx';
+'use strict';
 
-import request from 'request-promise';
+var request = require('request-promise');
 
-import { WorkbookParser } from './WorkbookParser';
+var WorkbookParser = require('./WorkbookParser');
 
 class WorkbookProcessor {
 
@@ -16,28 +16,11 @@ class WorkbookProcessor {
               const workbook = WorkbookParser.workbook(buffer)
               const parser = new WorkbookParser(workbook);
               return parser.parse();
-            });
+            })
   }
 
 
 }
 
 
-export { WorkbookProcessor }
-
-// return new Promise( (resolve, reject) => {
-//   console.log('Promise');
-//   request(this.url, {encoding: null})
-//     .then((buffer) => {
-//       console.log(buffer);
-//       const workbook = WorkbookParser.workbook(buffer)
-//       const parser = new WorkbookParser(workbook);
-//       const data = parser.parse();
-//       console.log(data);
-//       resolve(data);
-//     })
-//     .catch(function (err) {
-//       console.log(err);
-//       reject(err);
-//     });
-// });
+module.exports = WorkbookProcessor;
