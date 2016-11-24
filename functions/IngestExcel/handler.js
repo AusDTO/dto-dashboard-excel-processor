@@ -5,9 +5,6 @@ var WorkbookProcessor = require('../lib/WorkbookProcessor');
 
 module.exports.default = (event, context, callback) => {
   const s3Event = new S3Event(event);
-
-  console.log({Processing: s3Event.url});
-
   const workbook = new WorkbookProcessor(s3Event.url);
 
   workbook.process()
@@ -17,7 +14,6 @@ module.exports.default = (event, context, callback) => {
     })
     .catch( (err) => {
       console.log({Error: err.message});
-      console.log(err);
       callback(err, null);
     });
 }

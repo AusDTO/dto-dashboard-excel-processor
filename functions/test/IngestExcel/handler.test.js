@@ -52,7 +52,7 @@ test.cb.serial('handles an HTTP error', t => {
   request.get.restore();
 });
 
-test.cb.only('handles a parser error', t => {
+test.cb('handles a parser error', t => {
   const url = '../lib/data.xlsx';
 
   const req = Promise.resolve(fs.readFileSync(url));
